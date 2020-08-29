@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+const http = require('http').createServer(app);
 const routes = express.Router();
 const port = process.env.PORT || 3000;
 
@@ -12,4 +13,15 @@ routes.get('/', (req, res, next) => {
 });
 
 app.use(routes);
-app.listen(port);
+http.listen(port);
+
+//server side for web sockets
+const io = require('socket.io')(http);
+
+io.on('connection', (socket) => {
+    console.log("Client Connected");
+
+    socket.on('message', (msg) => {
+        socket.broadcast.emit('message', msg);
+    });
+});

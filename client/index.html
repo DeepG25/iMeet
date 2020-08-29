@@ -7,24 +7,17 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <section class="chat__section">
+    <section class="chat_section">
         <div class="brand">
             <img height="30" src="/src/telegram.png" alt="">
             <h1><strong>i</strong>Meet</h1>
         </div>
-        <div class="message_area">
-            <div class="incoming message">
-                <h4>Receiver Name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate non, aspernatur corrupti fugiat, veniam delectus aperiam quae illum animi nisi laboriosam tenetur est. Molestias ad excepturi ab perspiciatis tempora inventore.</p>
-            </div>
-            <div class="outgoing message">
-                <h4>Sender Name</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ducimus numquam molestiae voluptatem hic obcaecati doloremque est? Magnam numquam neque harum perspiciatis. Iste laborum id odit dolor beatae quas consectetur?</p>
-            </div>
-        </div>
+        <div class="message_area"></div>
         <div>
             <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..."></textarea>
         </div>
     </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./src/client.js"></script>
 </body>
 </html>
